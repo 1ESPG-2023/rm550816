@@ -39,5 +39,9 @@ const liElementHtml = document.getElementsByTagName("li");
 const liElementArray = [...liElementHtml];
 
 liElementArray.map((item, key)=>{
-    console.log(`${key+1} -I${item.textContent}`)
-})
+    //Localizando o Item
+    if (item.textContent == "Item-39"){
+        console.log(`${key+1} -I${item.textContent = "Localizado"}`)
+    }
+})       
+ 
