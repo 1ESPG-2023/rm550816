@@ -84,11 +84,11 @@ function mudaCor(){
     tmp = setTimeout(mudaCor, 500)
 
 }
-// mudaCor();
+mudaCor();
 //---------------------------------------------------------------------------------
 
-//Função Altera Banner
-
+// Função Altera Banner
+let temp
 function alteraBanner(){
     let nr = Math.round(Math.random()*3);
     
@@ -97,15 +97,21 @@ function alteraBanner(){
     const img1 = document.querySelector(".l-e > img");
     img1.src = caminho;
     
-
+    temp = setTimeout(alteraBanner, 1000)
 }
 alteraBanner();
 
-function alteraBanner2(){
-    let nr = Math.round(Math.random()*3);
+let tempo
+function alteraBannerr(){
+    let num = Math.round(Math.random()*3);
     
-    let caminho = `./img/banner-lateral-${nr}.png`;
-    const img2 = document.querySelector(".l-d > img");
-
-    img2.scr = caminho;
+    let caminhoo = `./img/banner-lateral-${num}.png`;
+   
+    const imagem = document.querySelector(".l-d > img");
+    imagem.src = caminhoo;
+    
+    tempo = setTimeout(alteraBannerr, 1000)
 }
+alteraBannerr()
+
+
