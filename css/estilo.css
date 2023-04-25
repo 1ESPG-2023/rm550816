@@ -12,17 +12,22 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    height: 60vh;
+    height: auto;
     background-color: deeppink;
+}
+.container .central{
+    flex-grow:5;
 }
 
 .container .l-e{
-    flex-grow: 5;
+    flex-grow: 1;
     background-color: blue;
     text-align: center;
+    /* background-image:url("../img/banner-lateral-1.png") ; */
 }
 .container .l-d{
-    flex-grow: 5;
+    flex-grow: 1;
     background-color: aqua;
     text-align: center;
+    /* background-image:url("../img/banner-lateral-2.png") ; */
 }

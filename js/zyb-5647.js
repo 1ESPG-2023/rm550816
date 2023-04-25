@@ -5,7 +5,6 @@
     
 // // }
 
-
 // // console.log(liElement.length);
 
 // //Declaração de Arrays
@@ -18,6 +17,7 @@
 // console.log(`Array-2 ${nr2}`);
 // console.log(`Array-3 ${nr3}`);
 
+////--------------------------------------------------------------------------------------
 // //Listando um Array tecnica especial
 // // nr3.forEach((ItemDoArray)=> {
 // //     console.log(`Array-3 sendo listada ${ItemDoArray}`);
@@ -44,21 +44,68 @@
 //         console.log(`${key+1} -I${item.textContent = "Localizado"}`)
 //     }
 // })       
-
-function soma(p1, p2, p3){
-    nr1 = p1;
-    nr2 = p2;
+////-----------------------------------------------------------------------------------
+// function soma(p1, p2, p3){
+//     nr1 = p1;
+//     nr2 = p2;
     
-    return(parseInt(nr1) + parseInt(nr2) + parseInt(p3))
+//     return(parseInt(nr1) + parseInt(nr2) + parseInt(p3))
 
-    // console.log(parseInt(nr1) + parseInt(nr2) + parseInt(parametro))
-    // console.log(`Este é o paramentro que foi passado para a função : ${parametro}`);
+//     // console.log(parseInt(nr1) + parseInt(nr2) + parseInt(parametro))
+//     // console.log(`Este é o paramentro que foi passado para a função : ${parametro}`);
+// }
+
+// //Arrow Funcion
+// const mudaCor = ()=>{
+
+//     //Função SET-TIME-OUT
+//     setTimeout(alert("Executou"), 5000);
+// }
+// mudaCor();
+//--------------------------------------------------------------------------------------
+
+let tmp
+function mudaCor(){
+    let r = "";
+    let g = "";
+    let b = "";
+
+    //random = Gera números aleatórios entre 0 e 1
+    //ceil, floor e round que arredondam o número para cima, para baixo ou aleatoriamente.
+
+    //Determinando para a variável r um valor entre 0 e 255.
+    r = Math.round( Math.random()*255);
+    g = Math.round( Math.random()*255);
+    b = Math.round( Math.random()*255);
+
+    const cabecalho = document.querySelector(".cabecalho");
+    cabecalho.setAttribute("style", `background-color:rgb(${r},${g},${b})`)
+
+    tmp = setTimeout(mudaCor, 500)
+
 }
+// mudaCor();
+//---------------------------------------------------------------------------------
 
-//Arrow Funcion
-const mudaCor = ()=>{
+//Função Altera Banner
 
-    //Função SET-TIME-OUT
-    setTimeout(alert("Executou"), 5000);
+function alteraBanner(){
+    let nr = Math.round(Math.random()*3);
+    
+    let caminho = `./img/banner-lateral-${nr}.png`;
+
+    const img1 = document.querySelector(".l-e > img");
+    img1.src = caminho;
+    
+
 }
-mudaCor();
+alteraBanner();
+
+function alteraBanner2(){
+    let nr = Math.round(Math.random()*3);
+    
+    let caminho = `./img/banner-lateral-${nr}.png`;
+    const img2 = document.querySelector(".l-d > img");
+
+    img2.scr = caminho;
+}
