@@ -24,10 +24,12 @@
     background-color: blue;
     text-align: center;
     /* background-image:url("../img/banner-lateral-1.png") ; */
+    background-size: cover;
 }
 .container .l-d{
     flex-grow: 1;
     background-color: aqua;
     text-align: center;
     /* background-image:url("../img/banner-lateral-2.png") ; */
+    background-size: cover;
 }
