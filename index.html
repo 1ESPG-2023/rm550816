@@ -17,13 +17,36 @@
         <aside class="l-e">
             <img src="./img/banner-lateral-1.png" alt="Quadro" >
         </aside>
+        
         <section class="central">
-            <img src="./img/pic_bulboff.gif" alt="lampada">
-            <img src="./img/pic_bulbon.gif" alt="lampada">
+            <div>
+                <img src="./img/pic_bulboff.gif" alt="lampada">
+            </div>
+            <button onclick="ligaDesliga()">Ligar</button>
         </section>
+        
         <aside class="l-d">
             <img src="./img/banner-lateral-1.png" alt="Quadro">
         </aside>
+    </div>
+
+    <div class="info">
+        <form action="index.html" method="get" onsubmit="return false">
+            <fieldset>
+                <legend>LOGIN</legend>
+                <div>
+                    <label for="idUser">Usuário - (mínimo 8 letras)</label>
+                    <input type="text" name="nmUser"  id="idUser" placeholder="Usuário">
+                </div>
+                <div>
+                    <label for="idPass">Senha</label>
+                    <input type="password" name="txtPass" id="idPass" placeholder="Senha">
+                </div>
+                <div>
+                    <button type="button">LOGIN</button>
+                </div>
+            </fieldset>
+        </form>
     </div>
     
 
