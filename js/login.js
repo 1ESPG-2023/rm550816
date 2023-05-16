@@ -32,26 +32,36 @@ addEventListener("click",(evento)=>{
     if(evento.target.id == "btnSubmit"){
         // let usuario = document.querySelector("#idUser").value;
         // let senha = document.querySelector("#idPass").value;
-        // //Armazenando os dados no OBJETO
-        // usuario.nomeUsuario = document.querySelector("#idUser").value;
-        // usuario.senhaUsuario = document.querySelector("#idPass").value;
-        
-        // Recuperando inputs
+       
+        // RECUPERANDO DOS IMPUTS
         let inputUserValue = document.querySelector("#idUser").value;
         let inputPassValue = document.querySelector("#idPass").value;
         
         const h1Titulo = document.querySelector("#titulo");
 
         let lista = JSON.parse(localStorage.getItem("listaUser"));
+        
+        try{
+            lista.forEach((usuario)=> {
+                //VALIDAÇÃO
+                if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
+                    throw "VALIDADO";
+                }
+            });
 
-        lista.forEach((usuario)=> {
-             //VALIDAÇÃO
-        if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
-           h1Titulo.innerHTML = "Bem vindo : " + usuario.nomeUsuario;
-        }else{
-           
-        }
-        });
+                throw "NÃO VALIDADO";
 
-}
+        }catch(msg){
+            if(msg == "VALIDADO"){
+                h1Titulo.innerHTML = "<span><strong>Login validado com sucesso!</strong></span>";
+                h1Titulo.setAttribute("style","color:#00ff00;");
+                //Direcionando o usuário para a página de sucesso!
+                window.location.href = "../sucesso.html";
+            }else{
+                h1Titulo.innerHTML = "<span><strong>Login ou senha inválidos!</strong></span>";
+                h1Titulo.setAttribute("style","color:#ff0000;");
+                window.location.href = "../erro.html";
+            }
+        }       
+    }
 });
